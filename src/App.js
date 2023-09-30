@@ -1,12 +1,17 @@
 import HomePage from "./routes/home/home.component";
 
+import { Route, Routes } from "react-router-dom";
+import NavigationMenu from "./routes/navigation/navigation.component";
+import TrainingSessions from "./routes/training-sessions/training-sessions.component";
 
 function App() {
   return (
-   <>
-   <div>hello nigga</div>
-   <HomePage />
-   </>
+    <Routes>
+      <Route path="/" element={<NavigationMenu />}>
+        <Route index element={<HomePage />} />
+        <Route path='training-sessions' element={<TrainingSessions />}/>
+      </Route>
+    </Routes>
   );
 }
 
